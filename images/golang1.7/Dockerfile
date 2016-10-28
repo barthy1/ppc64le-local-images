@@ -7,7 +7,7 @@ RUN apt-get install -y --no-install-recommends \
 		libc6-dev \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.6.2
+ENV GOLANG_VERSION 1.7
 ENV GOLANG_DOWNLOAD_URL http://ftp.unicamp.br/pub/ppc64el/ubuntu/14_04/cloud-foundry/go-$GOLANG_VERSION-ppc64le.tar.gz
 
 RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
