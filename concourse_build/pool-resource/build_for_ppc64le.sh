@@ -2,18 +2,18 @@
 
 set -eu
 
-image_name='s3-resource-image'
-file_name='s3-resource'
+image_name='pool-resource-image'
+file_name='pool-resource'
 
-rm -rf s3-resource
-git clone https://github.com/barthy1/s3-resource -b ppc64le-first-deploy
-cd s3-resource
+rm -rf pool-resource
+git clone https://github.com/barthy1/pool-resource -b ppc64le-first-deploy
+cd pool-resource
 rm -rf ./gopath ./built-resource
 
-git clone https://github.com/barthy1/s3-resource -b ppc64le-first-deploy ./gopath/src/github.com/concourse/s3-resource
+git clone https://github.com/barthy1/pool-resource -b ppc64le-first-deploy ./gopath/src/github.com/concourse/pool-resource
 
 mkdir ./built-resource
-./scripts/ci
+./ci/build
 
 cd ./built-resource
 sudo docker build -f ./Dockerfile_ppc64le -t $image_name .

@@ -5,7 +5,7 @@ set -eu
 image_name='semver-resource-image'
 file_name='semver-resource'
 
-rm -rf archive-resource
+rm -rf semver-resource
 git clone https://github.com/barthy1/semver-resource -b ppc64le-first-deploy
 cd semver-resource
 rm -rf ./gopath ./built-resource
